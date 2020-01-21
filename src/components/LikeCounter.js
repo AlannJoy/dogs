@@ -2,15 +2,23 @@ import React, { Component } from "react";
 
 export default class LikeCounter extends Component {
   state = {
-    numLikes: 0
+    numMatches: 0
   };
+
+  addMatch = () => {
+    this.setState({
+      numMatches: this.state.numMatches + 1
+    });
+  };
+
   render() {
-    const { numLikes } = this.state;
+    console.log(this.state);
+
+    const { numMatches } = this.state;
+    const likeCountText = numMatches && `This dog has ${numMatches} matches!`;
     return (
       <div>
-        <p>
-          This dog has <b>{numLikes}</b> matches!
-        </p>
+        <button onClick={this.addMatch}>{likeCountText}</button>
       </div>
     );
   }
