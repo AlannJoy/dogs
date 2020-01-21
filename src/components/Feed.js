@@ -1,29 +1,28 @@
 import React, { Component } from "react";
-// import Image from "./Image";
-// import List from "./List";
-import PruebaFetching from "./PruebaFetching";
 
 export default class Feed extends Component {
   state = {
-    dogs: {}
+    dogs: []
+  };
+
+  componentDidMount = async () => {
+    const response = await fetch("https://dog.ceo/api/breeds/list/all");
+    const json = await response.json();
+    this.setState({ dogs: Object.keys(json.message) });
   };
 
   fetchLabradors = () => {
     console.log("Labrador!");
-    // this.setState({
-    //   dogs: false
-    // });
   };
   render() {
+    console.log(this.state);
+
     return (
       <div>
-        <PruebaFetching />
-        {/* <div className="buttonsContainer">
-          <button id="Labrador" onClick={this.fetchLabradors}>
-            Labrador
-          </button>
-        </div>
-        <div className="photo-grid"></div> */}
+        {this.state.dogs.map(dog => {
+          console.log(dog);
+          return <button>{dog}</button>;
+        })}
       </div>
     );
   }
