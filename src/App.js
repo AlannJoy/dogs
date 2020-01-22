@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
 import Feed from "./components/Feed";
+import Title from "./components/Title";
 
 function App() {
   return (
     <div className="App">
-      <h1>DogMatch!</h1>
+      <Title />
       <Feed />
     </div>
   );
