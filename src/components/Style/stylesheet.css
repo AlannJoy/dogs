@@ -1,0 +1,25 @@
+.title {
+  border: solid;
+  border-width: 5px;
+  border-color: brown;
+  margin: 10px;
+}
+
+.feed {
+  border: solid;
+  border-width: 5px;
+  border-color: blue;
+  margin: 10px;
+}
+.breedButton {
+  border: solid;
+  border-width: 5px;
+  border-color: green;
+  margin: 10px;
+}
+.dog-img {
+  border: solid;
+  border-width: 5px;
+  border-color: yellow;
+  margin: 10px;
+}
